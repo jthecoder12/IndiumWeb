@@ -1,7 +1,7 @@
 main();
 
 function main() {
-    const canvas = document.querySelector("gameCanvas");
+    const canvas = document.querySelector("#gameCanvas");
     const gl = canvas.getContext("webgl");
 
     if(gl == null) {
