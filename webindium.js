@@ -77,14 +77,11 @@ class RGBA {
     }
 }
 
-function main() {
-    canvas = document.querySelector("#gameCanvas");
-    gl = canvas.getContext("webgl");
+canvas = document.querySelector("#gameCanvas");
+gl = canvas.getContext("webgl");
 
-    if(gl == null) {
-        alert("Initialization failed");
-        return;
-    }
+if(gl == null) {
+    alert("Initialization failed");
 }
 
 function loop(bgColor) {
