@@ -1,3 +1,6 @@
+let canvas = null;
+let gl = null;
+
 main();
 
 class Vector2f {
@@ -74,17 +77,17 @@ class RGBA {
     }
 }
 
-function loop(bgColor) {
-    gl.clearColor(bgColor.getRed()/255, bgColor.getGreen()/255, bgColor.getBlue()/255, bgColor.getAlpha()/255);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-}
-
 function main() {
-    const canvas = document.querySelector("#gameCanvas");
-    const gl = canvas.getContext("webgl");
+    canvas = document.querySelector("#gameCanvas");
+    gl = canvas.getContext("webgl");
 
     if(gl == null) {
         alert("Initialization failed");
         return;
     }
+}
+
+function loop(bgColor) {
+    gl.clearColor(bgColor.getRed()/255, bgColor.getGreen()/255, bgColor.getBlue()/255, bgColor.getAlpha()/255);
+    gl.clear(gl.COLOR_BUFFER_BIT);
 }
